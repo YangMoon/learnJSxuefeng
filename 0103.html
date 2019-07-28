@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条件判断</title>
+	<script>
+		var age=20;
+		if(age>=18){
+			alert('adult');
+		}else{
+			alert('teenager');
+		}
+
+		if(age>=18){
+			alert('adult');
+		}else if(age>=6){
+			alert('teenager');
+		}else{
+			alert('kid');
+		}
+
+		var height=parseFloat(prompt('请输入身高（m）：'));
+		var weight=parseFloat(prompt('请输入体重（kg)：'));
+		var bmi=weight/height;
+		if(bmi<18.5){
+			alert('过轻');
+		}else if(bmi<25){
+			alert('正常');
+		}else if(bmi<28){			
+			alert('过重');
+		}else if(bmi<232){			
+			alert('肥胖');
+		}else{
+			alert('严重肥胖');
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

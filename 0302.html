@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>箭头函数</title>
+	<script>
+		x=>x*x;
+		// 等同于：     这就是箭头函数
+		// function (x){
+		// 	return x*x;
+		// }
+		console.log('Arrow Function!');
+
+		// 由于JavaScript函数对this绑定的错误处理，下面的例子无法得到预期结果：
+		// var obj={
+		// 	birth:1990,
+		// 	getAge:function(){
+		// 		var b=this birdth;
+		// 		var fn=function(){
+		// 			return new Date().getFullYear()-this.birth;// this指向window或undefined
+		// 		};
+		// 		return fn();
+		// 	}
+		// };
+		
+		var obj={
+			birth:1990,
+			getAge:function(){
+				var b=this.birth; //1990
+				var fn=()=>new Date().getFullYear()-this.birth;// this指向obj对象
+				return fn();
+			}
+		};
+
+		// 如果使用箭头函数，以前的那种hack写法：
+		// var that = this;
+
+		// 要编写一个产生斐波那契数列的函数，可以这么写：
+
+		function fib(max){
+			var t,a=0,b=1,arr=[0,1];
+			while(arr.length<max){
+				[a,b]=[b,a+b];
+				arr.push[b];
+			}
+			return arr;
+		}
+
+		fib(5);
+		fib(10);
+		// console.log(fib(5));
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

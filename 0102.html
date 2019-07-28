@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象</title>
+	<script>
+		var xiaoming={
+			name: '小明',
+			birth: 1990,
+			school: 'No.1 Middle School',
+			height: 1.70,
+			weight: 65,
+			score: null
+		};
+		console.log(xiaoming.name);
+		console.log(xiaoming.height);
+		console.log(xiaoming.school);
+
+		var liming={
+			name:'李明'
+		};
+		liming.age;
+		liming.age=18;
+		liming.age;
+		console.log(liming.age);
+		delete liming.age;
+		console.log(liming.age);
+		delete liming.name;
+		console.log(liming.name);
+		delete liming.school;
+
+		console.log('name' in xiaoming);
+		console.log('name' in liming);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

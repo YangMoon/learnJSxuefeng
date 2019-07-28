@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RegExp</title>
+	<script>
+		// 第一种方式是直接通过/正则表达式/写出来，第二种方式是通过new RegExp('正则表达式')创建一个RegExp对象。
+		var re1=/ABC\-001/;
+		var re2=new RegExp('ABC\\-001');
+
+		console.log(re1);
+		console.log(re2);
+
+		// RegExp对象的test()方法用于测试给定的字符串是否符合条件。
+		var re= /^\d{3}\-\d{3,8}$/;
+		console.log(re.test('010-12345')); //true
+		console.log(re.test('010-1234x')); //false
+		console.log(re.test('010 12345')); //false
+
+		// 切分字符串
+		'ab c'.split(' '); //{'a','b','','c'} 
+		// 无法识别连续的空格，用正则表达式试试：
+		'ab c'.split(/\s+/); //{'a','b','c'}
+		// 无论多少个空格都可以正常分割。加入,试试：
+		'a,b,  c  d'.split(/[\s\,]+/); //{'a','b','c','d'}
+		'a,b;; c  d'.split(/[\s\,\;]+/); // ['a', 'b', 'c', 'd']
+
+		// 分组
+		// 除了简单地判断是否匹配之外，正则表达式还有提取子串的强大功能。用()表示的就是要提取的分组（Group）。
+		var re = /^(\d{3})-(\d{3,8})$/;
+		re.exec('010-12345'); // ['010-12345', '010', '12345']
+		re.exec('010 12345'); // null
+
+		console.log(re.exec('010-12345'));
+		// 提取子串非常有用。来看一个更凶残的例子：
+
+
+
+
+
+
+
+
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

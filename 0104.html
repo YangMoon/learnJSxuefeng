@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>循环</title>
+	<script>
+		var x=0
+		for(var i=1;i<10000;i++){
+			x=x+i;
+		}
+		console.log(x);
+
+		for(var i=1;i<10;i++){
+			if(x===3628800){
+				console.log('1*2*3*……*10='+x);
+			}else{
+				console.log('计算错误');
+			}
+		}
+
+	var arr=['Apple','Google','Microsoft'];
+	var x;
+	for(var i=0;i<arr.length;i++){
+		x=arr[i];
+		console.log(x);
+	}
+
+	var x=1;
+	for(;;){
+		if(x>100){
+			break; //通过if判断来退出循环
+		}
+		x++;
+	}
+
+	var o={
+		name:'Jack',
+		age:20,
+		city:'Beijing'
+	};
+	for(var key in o){
+		console.log(key);
+	}
+
+	for(var key in o){
+		if(o.hasOwnProperty(key)){
+			console.log(key);
+		}
+	}
+
+	var a=['A','B','C'];
+	for(var i in a){
+		console.log(i);
+		console.log(a[i]);
+	}
+
+	var x=0;
+	var n=99;
+	while(n>0){
+		x=x+n;
+		n=n-2;
+	}
+	console.log(x);
+
+	var n=0;
+	do{
+		n=n+1;
+	}while(n<100);
+	console.log(n);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

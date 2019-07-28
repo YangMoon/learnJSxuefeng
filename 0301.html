@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数</title>
+	<script>
+		function abs(x){
+			if(x>=0){
+				return x;
+			}else{
+				return -x;
+			}
+		}
+
+		console.log(abs(10));
+		console.log(abs(-9));
+
+		console.log(abs(10,'blablabla'));
+		console.log(abs(-9,'haha','hehe',null));
+
+		console.log(abs());
+
+		// 要避免收到undefined，可以对参数进行检查：
+		function abs(x){
+			if(typeof x!=='number'){
+				throw 'Not a number';
+			}
+			if(x>=0){
+				return x;
+			}else{
+				return -x;
+			}
+		}
+		console.log(abs(-100));
+
+		// arguments 你可以获得调用者传入的所有参数
+		function foo(x){
+			console.log('x = '+x); //10
+			for(var i=0;i<arguments.length;i++){
+				console.log('arg'+i+' = '+arguments[i]); //10,20,30
+			}
+		}
+		foo(10,20,30);
+
+		function abs(){
+			if(arguments.length===0){
+				return 0;
+			}
+			var x=arguments[0];
+			return x>-0 ?x:-x;
+		}
+		console.log(abs());
+		console.log(abs(10));
+		console.log(abs(-9));
+
+		// 实际上arguments最常用于判断传入参数的个数。你可能会看到这样的写法：
+		// foo(a[, b], c)
+		// 接收2~3个参数，b是可选参数，如果只传2个参数，b默认为null：
+		function foo(a,b,c){
+			if(arguments.length===2){
+				// 实际拿到的参数是a和b，c为undefined
+				c=b; // 把b赋给c
+				b=null; // b变为默认值
+			}
+			// console.log('x = '+x); //10
+			for(var i=0;i<arguments.length;i++){
+				console.log('arg'+i+' = '+arguments[i]); //10,20,30
+			}
+		}
+		foo(10,30);
+		foo(10,20,30);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
